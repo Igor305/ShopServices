@@ -1,3 +1,0 @@
-# ShopServices
-
-git checkout dev

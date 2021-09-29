@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PresentationLayer</name>
+    </assembly>
+    <members>
+        <member name="M:StoresOpeningService.Controllers.shopsInfoController.getAllInfo(System.String)">
+             <summary>
+             Cписок всіх магазинів
+             </summary>
+             <param name="key">Ключ</param>
+             <remarks>
+             Sample request:
+            
+                 http://shop-services.avrora.lan/api/shopsInfo?key=exampleKey
+            
+             </remarks>
+             <returns></returns>
+        </member>
+        <member name="M:StoresOpeningService.Controllers.shopsInfoController.getAllInfo(System.String,System.Int32)">
+             <summary>
+             Cписок магазинів із зазначеним статусом
+             </summary>
+             <param name="key">Ключ</param>
+             <param name="statusId">Номер статусу</param>
+             <remarks>
+             Sample request:
+            
+                 http://shop-services.avrora.lan/api/shopsInfo/status?key=exampleKey&amp;statusId=25
+            
+             </remarks>
+             <returns></returns>
+        </member>
+        <member name="M:StoresOpeningService.Controllers.storesOpeningController.getAllStoresOpening(System.String)">
+             <summary>
+             Cписок відкриттів у майбутньому
+             </summary>
+             <param name="key">Ключ</param>
+             <remarks>
+             Sample request:
+            
+                 http://shop-services.avrora.lan/api/storesOpening?key=exampleKey
+            
+             </remarks>
+             <returns></returns>
+        </member>
+        <member name="M:StoresOpeningService.Controllers.storesOpeningController.getAllStoresOpening(System.String,System.DateTime,System.DateTime)">
+             <summary>
+             Cписок відкриттів у періоді
+             </summary>
+             <param name="key">Ключ</param>
+             <param name="from">Початкова дата</param>
+             <param name="till">Кінцева дата</param>
+             <remarks>
+             Sample request:
+            
+                 http://shop-services.avrora.lan/api/storesOpening/period?key=exampleKey&amp;from=2021-09-28
+            
+             </remarks>
+             <returns></returns>
+        </member>
+    </members>
+</doc>
