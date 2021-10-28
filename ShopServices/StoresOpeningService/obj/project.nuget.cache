@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xXqK7TE1Ph5OBJka4HUh+TMiKl282EtU6hn5WdiNPc5l/z19tWScYhHH0mlruG4BTRR6F+WudQUWPcO7HAry0Q==",
+  "dgSpecHash": "ee9ETKky9if9Npa8KhMv0iQxMV9q/dNBjfUy63kQxABh7WRwbqot8HBSfpy01coHfGYZFo7Qlr9PBhdLQ6K/iA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\i.talavyria\\Desktop\\project\\API-Services\\ShopServices\\StoresOpeningService\\PresentationLayer.csproj",
+  "projectFilePath": "C:\\Users\\i.talavyria\\Desktop\\project\\API\\ShopServices\\ShopServices\\StoresOpeningService\\PresentationLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\i.talavyria\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\i.talavyria\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

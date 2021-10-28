@@ -166,7 +166,7 @@ namespace BusinessLogicLayer.Services
 
         private void query(string method, List<WaypointsModel> waypointsModels)
         {
-            WebRequest request = WebRequest.Create(_configuration["TMS:TestServer"]);
+            WebRequest request = WebRequest.Create(_configuration["TMS:Server"]);
 
             request.Method = method;
             request.ContentType = "application/json";

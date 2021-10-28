@@ -6252,11 +6252,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\i.talavyria\\Desktop\\project\\API-Services\\ShopServices\\StoresOpeningService\\PresentationLayer.csproj",
+      "projectUniqueName": "C:\\Users\\i.talavyria\\Desktop\\project\\API\\ShopServices\\ShopServices\\StoresOpeningService\\PresentationLayer.csproj",
       "projectName": "PresentationLayer",
-      "projectPath": "C:\\Users\\i.talavyria\\Desktop\\project\\API-Services\\ShopServices\\StoresOpeningService\\PresentationLayer.csproj",
+      "projectPath": "C:\\Users\\i.talavyria\\Desktop\\project\\API\\ShopServices\\ShopServices\\StoresOpeningService\\PresentationLayer.csproj",
       "packagesPath": "C:\\Users\\i.talavyria\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\i.talavyria\\Desktop\\project\\API-Services\\ShopServices\\StoresOpeningService\\obj\\",
+      "outputPath": "C:\\Users\\i.talavyria\\Desktop\\project\\API\\ShopServices\\ShopServices\\StoresOpeningService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\i.talavyria\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6273,8 +6273,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\i.talavyria\\Desktop\\project\\API-Services\\ShopServices\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
-              "projectPath": "C:\\Users\\i.talavyria\\Desktop\\project\\API-Services\\ShopServices\\BusinessLogicLayer\\BusinessLogicLayer.csproj"
+            "C:\\Users\\i.talavyria\\Desktop\\project\\API\\ShopServices\\ShopServices\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
+              "projectPath": "C:\\Users\\i.talavyria\\Desktop\\project\\API\\ShopServices\\ShopServices\\BusinessLogicLayer\\BusinessLogicLayer.csproj"
             }
           }
         }
@@ -6312,7 +6312,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

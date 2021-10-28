@@ -22,3 +22,16 @@ C:\Users\i.talavyria\Desktop\project\API-Services\ShopServices\DataAccessLayer\o
 C:\Users\i.talavyria\Desktop\project\API-Services\ShopServices\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.pdb
 C:\Users\i.talavyria\Desktop\project\API-Services\ShopServices\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.genruntimeconfig.cache
 C:\Users\i.talavyria\Desktop\project\API-Services\ShopServices\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.deps.json
+C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.runtimeconfig.json
+C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.runtimeconfig.dev.json
+C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.dll
+C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.pdb
+C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.AssemblyInfo.cs
+C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.dll
+C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.pdb
+C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.genruntimeconfig.cache
