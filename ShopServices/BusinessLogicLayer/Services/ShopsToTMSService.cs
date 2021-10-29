@@ -152,7 +152,7 @@ namespace BusinessLogicLayer.Services
             }
             else
             {
-                date += $"{month}-";
+                date += $"{month}-{day}";
             }
 
             return date;

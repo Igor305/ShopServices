@@ -34,7 +34,6 @@ C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\BusinessLogic
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.AssemblyInfoInputs.cache
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.AssemblyInfo.cs
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.csproj.CoreCompileInputs.cache
-C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.csproj.CopyComplete
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.dll
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.xml
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.pdb
