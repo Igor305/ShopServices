@@ -9,7 +9,7 @@ namespace DataAccessLayer.Entities.Shops
     {
         public Shop()
         {
-            BitrixResponses = new HashSet<BitrixResponse>();
+            /*BitrixResponses = new HashSet<BitrixResponse>();
             LinkedShopFirstShops = new HashSet<LinkedShop>();
             LinkedShopSecondShops = new HashSet<LinkedShop>();
             MediaFolders = new HashSet<MediaFolder>();
@@ -20,15 +20,15 @@ namespace DataAccessLayer.Entities.Shops
             ShopInstallersDevelopments = new HashSet<ShopInstallersDevelopment>();
             ShopOptimizationSchedules = new HashSet<ShopOptimizationSchedule>();
             ShopProviders = new HashSet<ShopProvider>();
-            ShopRents = new HashSet<ShopRent>();
+            ShopRents = new HashSet<ShopRent>();*/
         }
 
         public int Id { get; set; }
-        public DateTime CreatedDate { get; set; }
+        /*public DateTime CreatedDate { get; set; }
         public string Schedule { get; set; }
         public double TotalArea { get; set; }
         public double TradingArea { get; set; }
-        public double UtilityRoomArea { get; set; }
+        public double UtilityRoomArea { get; set; }*/
         public int? ShopNumber { get; set; }
         public DateTime? OpenFrom { get; set; }
         public int? StreetId { get; set; }
@@ -37,15 +37,16 @@ namespace DataAccessLayer.Entities.Shops
         public int? CityId { get; set; }
         public string WorkPhoneNumber { get; set; }
         public int? ShopRegionId { get; set; }
-        public string CreatedByUserId { get; set; }
+        /*public string CreatedByUserId { get; set; }
         public string LastUpdateByUserId { get; set; }
-        public DateTime? LastUpdateDate { get; set; }
+        public DateTime? LastUpdateDate { get; set; }*/
         public string Address { get; set; }
         public string AddressComment { get; set; }
-        public int? DistrictId { get; set; }
+        /*public int? DistrictId { get; set; }*/
         public int? ShopWorkTimeId { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
+        /*
         public DateTime? AdvertisingInstallation { get; set; }
         public DateTime? ClosedFrom { get; set; }
         public string DevelopmentDepartmentCoordinatorComments { get; set; }
@@ -60,17 +61,18 @@ namespace DataAccessLayer.Entities.Shops
         public bool? Terminal { get; set; }
         public int? ShopHeatingTypeId { get; set; }
         public int? ShopObjectComplexityId { get; set; }
-        public int? ShopSecurityId { get; set; }
+        public int? ShopSecurityId { get; set; }*/
         public byte[] TerritorialManagerId { get; set; }
-        public byte[] StaffManagerId { get; set; }
+        //public byte[] StaffManagerId { get; set; }
         public byte[] RegionalManagerId { get; set; }
+        /*
         public byte[] DevelopmentDepartmentManagerId { get; set; }
-        public byte[] DevelopmentDepartmentCoordinatorId { get; set; }
+        public byte[] DevelopmentDepartmentCoordinatorId { get; set; }*/
         public byte[] DeputyAdministratorId { get; set; }
         public byte[] AdministratorId { get; set; }
-        public byte[] PrivateEntrepreneurId { get; set; }
+        //public byte[] PrivateEntrepreneurId { get; set; }
         public string ShopWorkTimeString { get; set; }
-        public string Conditioners { get; set; }
+        /*public string Conditioners { get; set; }
         public string Ledpanels { get; set; }
         public bool? LandlordLoyalty { get; set; }
         public string LandlordLoyaltyComments { get; set; }
@@ -99,6 +101,6 @@ namespace DataAccessLayer.Entities.Shops
         public virtual ICollection<ShopInstallersDevelopment> ShopInstallersDevelopments { get; set; }
         public virtual ICollection<ShopOptimizationSchedule> ShopOptimizationSchedules { get; set; }
         public virtual ICollection<ShopProvider> ShopProviders { get; set; }
-        public virtual ICollection<ShopRent> ShopRents { get; set; }
+        public virtual ICollection<ShopRent> ShopRents { get; set; }*/
     }
 }

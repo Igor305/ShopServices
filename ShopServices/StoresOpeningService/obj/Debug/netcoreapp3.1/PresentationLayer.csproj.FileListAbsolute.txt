@@ -161,4 +161,3 @@ C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpening
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\obj\Debug\netcoreapp3.1\PresentationLayer.pdb
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\obj\Debug\netcoreapp3.1\PresentationLayer.genruntimeconfig.cache
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\obj\Debug\netcoreapp3.1\PresentationLayer.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\bin\Debug\netcoreapp3.1\PresentationLayer.StaticWebAssets.xml

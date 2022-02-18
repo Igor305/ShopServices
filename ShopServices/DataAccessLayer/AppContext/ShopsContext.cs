@@ -141,9 +141,9 @@ namespace DataAccessLayer.AppContext
 
                 entity.Property(e => e.TaskReason).HasMaxLength(512);
 
-                entity.HasOne(d => d.Shop)
+                /*entity.HasOne(d => d.Shop)
                     .WithMany(p => p.BitrixResponses)
-                    .HasForeignKey(d => d.ShopId);
+                    .HasForeignKey(d => d.ShopId);*/
             });
 
             modelBuilder.Entity<CitiesLocalization>(entity =>
@@ -367,15 +367,15 @@ namespace DataAccessLayer.AppContext
 
                 entity.Property(e => e.CreatedByUserId).IsRequired();
 
-                entity.HasOne(d => d.FirstShop)
+                /*entity.HasOne(d => d.FirstShop)
                     .WithMany(p => p.LinkedShopFirstShops)
                     .HasForeignKey(d => d.FirstShopId)
-                    .OnDelete(DeleteBehavior.ClientSetNull);
+                    .OnDelete(DeleteBehavior.ClientSetNull);*/
 
-                entity.HasOne(d => d.SecondShop)
+                /*entity.HasOne(d => d.SecondShop)
                     .WithMany(p => p.LinkedShopSecondShops)
                     .HasForeignKey(d => d.SecondShopId)
-                    .OnDelete(DeleteBehavior.ClientSetNull);
+                    .OnDelete(DeleteBehavior.ClientSetNull);*/
             });
 
             modelBuilder.Entity<MediaFolder>(entity =>
@@ -400,9 +400,9 @@ namespace DataAccessLayer.AppContext
                     .WithMany(p => p.InverseParentFolder)
                     .HasForeignKey(d => d.ParentFolderId);
 
-                entity.HasOne(d => d.Shop)
+                /*entity.HasOne(d => d.Shop)
                     .WithMany(p => p.MediaFolders)
-                    .HasForeignKey(d => d.ShopId);
+                    .HasForeignKey(d => d.ShopId);*/
             });
 
             modelBuilder.Entity<Notification>(entity =>
@@ -411,9 +411,9 @@ namespace DataAccessLayer.AppContext
 
                 entity.Property(e => e.NotificationType).HasMaxLength(150);
 
-                entity.HasOne(d => d.Shop)
+                /*entity.HasOne(d => d.Shop)
                     .WithMany(p => p.Notifications)
-                    .HasForeignKey(d => d.ShopId);
+                    .HasForeignKey(d => d.ShopId);*/
             });
 
             modelBuilder.Entity<Provider>(entity =>
@@ -651,7 +651,7 @@ namespace DataAccessLayer.AppContext
                     .HasForeignKey(d => d.StatusId);
             });
 
-            modelBuilder.Entity<Shop>(entity =>
+            /*modelBuilder.Entity<Shop>(entity =>
             {
                 entity.HasIndex(e => e.AdministratorId, "IX_Shops_AdministratorId");
 
@@ -802,7 +802,7 @@ namespace DataAccessLayer.AppContext
                 entity.HasOne(d => d.Street)
                     .WithMany(p => p.Shops)
                     .HasForeignKey(d => d.StreetId);
-            });
+            });*/
 
             modelBuilder.Entity<ShopContactPerson>(entity =>
             {
@@ -816,9 +816,9 @@ namespace DataAccessLayer.AppContext
 
                 entity.Property(e => e.Phone).HasMaxLength(256);
 
-                entity.HasOne(d => d.Shop)
+                /*entity.HasOne(d => d.Shop)
                     .WithMany(p => p.ShopContactPeople)
-                    .HasForeignKey(d => d.ShopId);
+                    .HasForeignKey(d => d.ShopId);*/
             });
 
             modelBuilder.Entity<ShopContactPersonHistory>(entity =>
@@ -848,9 +848,9 @@ namespace DataAccessLayer.AppContext
                     .HasMaxLength(10)
                     .HasColumnName("OKPO");
 
-                entity.HasOne(d => d.Shop)
+                /*entity.HasOne(d => d.Shop)
                     .WithMany(p => p.ShopContractor1Cs)
-                    .HasForeignKey(d => d.ShopId);
+                    .HasForeignKey(d => d.ShopId);*/
             });
 
             modelBuilder.Entity<ShopContractor1Chistory>(entity =>
@@ -879,9 +879,9 @@ namespace DataAccessLayer.AppContext
                     .HasForeignKey(d => d.DocumentId)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                entity.HasOne(d => d.Shop)
+                /*entity.HasOne(d => d.Shop)
                     .WithMany(p => p.ShopDocumentFolders)
-                    .HasForeignKey(d => d.ShopId);
+                    .HasForeignKey(d => d.ShopId);*/
             });
 
             modelBuilder.Entity<ShopFieldsMapping>(entity =>
@@ -1120,9 +1120,9 @@ namespace DataAccessLayer.AppContext
                     .HasMaxLength(16)
                     .IsFixedLength(true);
 
-                entity.HasOne(d => d.Shop)
+                /*entity.HasOne(d => d.Shop)
                     .WithMany(p => p.ShopInstallersDevelopments)
-                    .HasForeignKey(d => d.ShopId);
+                    .HasForeignKey(d => d.ShopId);*/
             });
 
             modelBuilder.Entity<ShopInstallersDevelopmentHistory>(entity =>
@@ -1166,9 +1166,9 @@ namespace DataAccessLayer.AppContext
 
                 entity.Property(e => e.StatusItid).HasColumnName("StatusITId");
 
-                entity.HasOne(d => d.Shop)
+                /*entity.HasOne(d => d.Shop)
                     .WithOne(p => p.ShopIt)
-                    .HasForeignKey<ShopIt>(d => d.ShopId);
+                    .HasForeignKey<ShopIt>(d => d.ShopId);*/
 
                 entity.HasOne(d => d.StatusIt)
                     .WithMany(p => p.ShopIts)
@@ -1251,9 +1251,9 @@ namespace DataAccessLayer.AppContext
 
                 entity.Property(e => e.CreatedByUserId).IsRequired();
 
-                entity.HasOne(d => d.Shop)
+                /*entity.HasOne(d => d.Shop)
                     .WithMany(p => p.ShopOptimizationSchedules)
-                    .HasForeignKey(d => d.ShopId);
+                    .HasForeignKey(d => d.ShopId);*/
             });
 
             modelBuilder.Entity<ShopOptimizationScheduleHistory>(entity =>
@@ -1295,9 +1295,9 @@ namespace DataAccessLayer.AppContext
                     .WithMany(p => p.ShopProviders)
                     .HasForeignKey(d => d.ProviderId);
 
-                entity.HasOne(d => d.Shop)
+                /*entity.HasOne(d => d.Shop)
                     .WithMany(p => p.ShopProviders)
-                    .HasForeignKey(d => d.ShopId);
+                    .HasForeignKey(d => d.ShopId);*/
             });
 
             modelBuilder.Entity<ShopProviderHistory>(entity =>
@@ -1342,9 +1342,9 @@ namespace DataAccessLayer.AppContext
 
                 entity.Property(e => e.RentValue).HasColumnType("decimal(18, 2)");
 
-                entity.HasOne(d => d.Shop)
+                /*entity.HasOne(d => d.Shop)
                     .WithMany(p => p.ShopRents)
-                    .HasForeignKey(d => d.ShopId);
+                    .HasForeignKey(d => d.ShopId);*/
             });
 
             modelBuilder.Entity<ShopRentHistory>(entity =>
