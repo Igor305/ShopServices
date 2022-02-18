@@ -154,8 +154,6 @@ C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpening
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\obj\Debug\netcoreapp3.1\PresentationLayer.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\obj\Debug\netcoreapp3.1\PresentationLayer.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\obj\Debug\netcoreapp3.1\staticwebassets\PresentationLayer.StaticWebAssets.Manifest.cache
-C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\obj\Debug\netcoreapp3.1\staticwebassets\PresentationLayer.StaticWebAssets.xml
-C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\obj\Debug\netcoreapp3.1\scopedcss\bundle\PresentationLayer.styles.css
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\obj\Debug\netcoreapp3.1\PresentationLayer.RazorTargetAssemblyInfo.cache
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\obj\Debug\netcoreapp3.1\PresentationLayer.csproj.CopyComplete
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\obj\Debug\netcoreapp3.1\PresentationLayer.dll
@@ -163,3 +161,4 @@ C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpening
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\obj\Debug\netcoreapp3.1\PresentationLayer.pdb
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\obj\Debug\netcoreapp3.1\PresentationLayer.genruntimeconfig.cache
 C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\obj\Debug\netcoreapp3.1\PresentationLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\i.talavyria\Desktop\project\API\ShopServices\ShopServices\StoresOpeningService\bin\Debug\netcoreapp3.1\PresentationLayer.StaticWebAssets.xml

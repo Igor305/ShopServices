@@ -34,7 +34,7 @@ namespace DataAccessLayer.Repositories.EFRepositories
 
         public async Task<List<Shop>> getAllStoresOpening()
         {
-            List<Shop> shops = await _shopsContext.Shops.Where(x => x.OpenFrom != null && x.OpenFrom.Value > DateTime.Now).ToListAsync();
+            List<Shop> shops = await _shopsContext.Shops.Where(x => x.OpenFrom != null && x.OpenFrom.Value > DateTime.Now && x.ShopNumber != null).ToListAsync();
 
             return shops;
         }
