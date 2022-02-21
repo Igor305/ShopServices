@@ -46,6 +46,20 @@ namespace DataAccessLayer.Repositories.EFRepositories
             return shops;
         }
 
+        public async Task<List<Shop>> getQAPriority()
+        {
+            List<Shop> shops = await _shopsContext.Shops.Where(x => (x.OpenFrom != null && x.OpenFrom.Value > DateTime.Now && x.ShopNumber != null) || (x.QAPriorityTo != null && x.QAPriorityTo.Value > DateTime.Now && x.ShopNumber != null)).ToListAsync();
+
+            return shops;
+        }
+
+        public async Task<List<Shop>> getQAPriorityForMonth(DateTime from, DateTime till)
+        {
+            List<Shop> shops = await _shopsContext.Shops.Where(x => (x.OpenFrom != null && x.OpenFrom.Value >= from && x.OpenFrom.Value <= till) ||(x.QAPriorityTo != null && x.QAPriorityTo.Value >= from && x.QAPriorityTo.Value <= till)).ToListAsync();
+
+            return shops;
+        }
+
         public async Task<List<Shop>> getShopsForTMS()
         {
             List<Shop> shops = await _shopsContext.Shops.Where(x => x.StatusId == 4 || x.StatusId == 8 || x.StatusId == 12 || x.StatusId == 16 || x.StatusId == 20 || x.StatusId == 25).OrderBy(x=>x.ShopNumber).ToListAsync();

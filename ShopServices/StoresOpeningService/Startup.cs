@@ -42,6 +42,7 @@ namespace PresentationLayer
             services.AddScoped<IEmployeesDirectoryRepository, EmployeesDirectoryRepository>();
             services.AddScoped<IShopWorkTimesRepository, ShopWorkTimesRepository>();
             services.AddScoped<IShopsOpeningService, ShopsOpeningService>();
+            services.AddScoped<IShopsQAPriorityService, ShopsQAPriorityService>();
             services.AddScoped<IShopsInfoService, ShopsInfoService>();
             services.AddScoped<IShopsToTMSService, ShopsToTMSService>();
 

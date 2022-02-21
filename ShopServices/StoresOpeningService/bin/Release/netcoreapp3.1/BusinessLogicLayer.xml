@@ -24,6 +24,16 @@
             Текст помилки
             </summary>
         </member>
+        <member name="P:BusinessLogicLayer.Models.Response.ShopsQAPriorityResponseModel.Status">
+            <summary>
+            Статус
+            </summary>
+        </member>
+        <member name="P:BusinessLogicLayer.Models.Response.ShopsQAPriorityResponseModel.Message">
+            <summary>
+            Текст помилки
+            </summary>
+        </member>
         <member name="T:BusinessLogicLayer.Models.ShopInfoModel">
             <summary>
             Інформація по ТТ
@@ -125,6 +135,16 @@
             </summary>
         </member>
         <member name="P:BusinessLogicLayer.Models.ShopOpeningModel.OpenFrom">
+            <summary>
+            Дата відкриття
+            </summary>
+        </member>
+        <member name="P:BusinessLogicLayer.Models.ShopQAPriorityModel.ShopNumber">
+            <summary>
+            Номер ТТ
+            </summary>
+        </member>
+        <member name="P:BusinessLogicLayer.Models.ShopQAPriorityModel.OpenFrom">
             <summary>
             Дата відкриття
             </summary>

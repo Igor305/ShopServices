@@ -72,6 +72,7 @@ namespace DataAccessLayer.Entities.Shops
         public byte[] AdministratorId { get; set; }
         //public byte[] PrivateEntrepreneurId { get; set; }
         public string ShopWorkTimeString { get; set; }
+        public DateTime? QAPriorityTo { get; set; }
         /*public string Conditioners { get; set; }
         public string Ledpanels { get; set; }
         public bool? LandlordLoyalty { get; set; }

@@ -4,6 +4,34 @@
         <name>PresentationLayer</name>
     </assembly>
     <members>
+        <member name="M:PresentationLayer.Controllers.qaPriorityController.getAllStoresOpening(System.String)">
+             <summary>
+             Реєстр магазинів для відображення QA
+             </summary>
+             <param name="key">Ключ</param>
+             <remarks>
+             Sample request:
+            
+                 http://shop-services.avrora.lan/api/qaPriority?key=exampleKey
+            
+             </remarks>
+             <returns></returns>
+        </member>
+        <member name="M:PresentationLayer.Controllers.qaPriorityController.getAllStoresOpening(System.String,System.DateTime,System.DateTime)">
+             <summary>
+             Реєстр магазинів для відображення QA у періоді
+             </summary>
+             <param name="key">Ключ</param>
+             <param name="from">Початкова дата</param>
+             <param name="till">Кінцева дата</param>
+             <remarks>
+             Sample request:
+            
+                 http://shop-services.avrora.lan/api/qaPriority/period?key=exampleKey&amp;from=2021-09-28
+            
+             </remarks>
+             <returns></returns>
+        </member>
         <member name="M:StoresOpeningService.Controllers.shopsInfoController.getAllInfo(System.String)">
              <summary>
              Cписок всіх магазинів
