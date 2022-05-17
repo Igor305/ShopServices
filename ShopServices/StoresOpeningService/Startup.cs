@@ -30,6 +30,7 @@ namespace PresentationLayer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<MobileContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:SQL11"]));
             services.AddDbContext<ShopsContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:SQL26-Shops"]));
             services.AddDbContext<_1cExchangeContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:SQL26-1cExchange"]));
 
@@ -41,6 +42,8 @@ namespace PresentationLayer
             services.AddScoped<IShopRegionLocalizationRepository, ShopRegionLocalizationRepository>();
             services.AddScoped<IEmployeesDirectoryRepository, EmployeesDirectoryRepository>();
             services.AddScoped<IShopWorkTimesRepository, ShopWorkTimesRepository>();
+            services.AddScoped<IReplicaStocksRepository, ReplicaStocksRepository>();
+
             services.AddScoped<IShopsOpeningService, ShopsOpeningService>();
             services.AddScoped<IShopsQAPriorityService, ShopsQAPriorityService>();
             services.AddScoped<IShopsInfoService, ShopsInfoService>();

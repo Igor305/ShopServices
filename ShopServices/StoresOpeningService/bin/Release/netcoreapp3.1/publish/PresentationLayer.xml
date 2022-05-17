@@ -6,7 +6,7 @@
     <members>
         <member name="M:PresentationLayer.Controllers.qaPriorityController.getAllStoresOpening(System.String)">
              <summary>
-             Реєстр магазинів для відображення QA
+             Реєстр магазинів для відображення QA, DepotCode = 1
              </summary>
              <param name="key">Ключ</param>
              <remarks>
@@ -28,6 +28,19 @@
              Sample request:
             
                  http://shop-services.avrora.lan/api/qaPriority/period?key=exampleKey&amp;from=2021-09-28
+            
+             </remarks>
+             <returns></returns>
+        </member>
+        <member name="M:PresentationLayer.Controllers.qaPriorityDcvController.getAllStoresOpening(System.String)">
+             <summary>
+             Реєстр магазинів для відображення QA, DepotCode = 2
+             </summary>
+             <param name="key">Ключ</param>
+             <remarks>
+             Sample request:
+            
+                 http://shop-services.avrora.lan/api/qaPriorityDcv?key=exampleKey
             
              </remarks>
              <returns></returns>

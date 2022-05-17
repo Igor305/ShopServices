@@ -19,7 +19,7 @@ namespace PresentationLayer.Controllers
         }
 
         /// <summary>
-        /// Реєстр магазинів для відображення QA
+        /// Реєстр магазинів для відображення QA, DepotCode = 1
         /// </summary>
         /// <param name="key">Ключ</param>
         /// <remarks>
@@ -32,7 +32,7 @@ namespace PresentationLayer.Controllers
         [HttpGet]
         public async Task<ShopsQAPriorityResponseModel> getAllStoresOpening([FromQuery] string key)
         {
-            ShopsQAPriorityResponseModel shopsQAPriorityResponseModel = await _shopsQAPriorityService.getQAPriority(key);
+            ShopsQAPriorityResponseModel shopsQAPriorityResponseModel = await _shopsQAPriorityService.getQAPriorityDepotCode1(key);
 
             return shopsQAPriorityResponseModel;
         }

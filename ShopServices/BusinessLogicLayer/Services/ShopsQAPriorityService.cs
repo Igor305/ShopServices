@@ -13,15 +13,17 @@ namespace BusinessLogicLayer.Services
     public class ShopsQAPriorityService : IShopsQAPriorityService
     {
         private readonly IShopsRepository _shopsRepository;
-        public readonly IConfiguration _configuration;
+        private readonly IReplicaStocksRepository _replicaStocksRepository;
+        private readonly IConfiguration _configuration;
 
-        public ShopsQAPriorityService(IShopsRepository shopsRepository, IConfiguration configuration)
+        public ShopsQAPriorityService(IShopsRepository shopsRepository, IReplicaStocksRepository replicaStocksRepository, IConfiguration configuration)
         {
             _shopsRepository = shopsRepository;
+            _replicaStocksRepository = replicaStocksRepository;
             _configuration = configuration;
         }
 
-        public async Task<ShopsQAPriorityResponseModel> getQAPriority(string key)
+        public async Task<ShopsQAPriorityResponseModel> getQAPriorityDepotCode1(string key)
         {
             ShopsQAPriorityResponseModel shopsQAPriorityResponseModel = new ShopsQAPriorityResponseModel();
 
@@ -37,15 +39,23 @@ namespace BusinessLogicLayer.Services
 
                 List<Shop> shops = await _shopsRepository.getQAPriority();
 
+                List<DataAccessLayer.Entities.Mobile.Stock1> stocks = await _replicaStocksRepository.getDepotCode1();
+
                 foreach (Shop shop in shops)
                 {
-                    if (shop.OpenFrom > DateTime.Now)
+                    foreach (DataAccessLayer.Entities.Mobile.Stock1 stock in stocks)
                     {
-                        shopsQAPriorityResponseModel.shopQAPriorityModels.Add(new ShopQAPriorityModel { ShopNumber = shop.ShopNumber, OpenFrom = shop.OpenFrom });
-                    }
-                    if (shop.QAPriorityTo != null && shop.QAPriorityTo > DateTime.Now)
-                    {
-                        shopsQAPriorityResponseModel.shopQAPriorityModels.Add(new ShopQAPriorityModel { ShopNumber = shop.ShopNumber, OpenFrom = shop.QAPriorityTo });
+                        if (shop.Id == stock.StockId)
+                        {
+                            if (shop.OpenFrom > DateTime.Now)
+                            {
+                                shopsQAPriorityResponseModel.shopQAPriorityModels.Add(new ShopQAPriorityModel { ShopNumber = shop.ShopNumber, OpenFrom = shop.OpenFrom });
+                            }
+                            if (shop.QAPriorityTo != null && shop.QAPriorityTo > DateTime.Now)
+                            {
+                                shopsQAPriorityResponseModel.shopQAPriorityModels.Add(new ShopQAPriorityModel { ShopNumber = shop.ShopNumber, OpenFrom = shop.QAPriorityTo });
+                            }
+                        }
                     }
                 }
 
@@ -60,6 +70,55 @@ namespace BusinessLogicLayer.Services
 
             return shopsQAPriorityResponseModel;
         }
+
+        public async Task<ShopsQAPriorityResponseModel> getQAPriorityDepotCode2(string key)
+        {
+            ShopsQAPriorityResponseModel shopsQAPriorityResponseModel = new ShopsQAPriorityResponseModel();
+
+            try
+            {
+                if (key != _configuration["Api:Key"])
+                {
+                    shopsQAPriorityResponseModel.Status = false;
+                    shopsQAPriorityResponseModel.Message = "error key";
+
+                    return shopsQAPriorityResponseModel;
+                }
+
+                List<Shop> shops = await _shopsRepository.getQAPriority();
+
+                List<DataAccessLayer.Entities.Mobile.Stock1> stocks = await _replicaStocksRepository.getDepotCode2();
+
+                foreach (Shop shop in shops)
+                {
+                    foreach (DataAccessLayer.Entities.Mobile.Stock1 stock in stocks)
+                    {
+                        if (shop.Id == stock.StockId)
+                        {
+                            if (shop.OpenFrom > DateTime.Now)
+                            {
+                                shopsQAPriorityResponseModel.shopQAPriorityModels.Add(new ShopQAPriorityModel { ShopNumber = shop.ShopNumber, OpenFrom = shop.OpenFrom });
+                            }
+                            if (shop.QAPriorityTo != null && shop.QAPriorityTo > DateTime.Now)
+                            {
+                                shopsQAPriorityResponseModel.shopQAPriorityModels.Add(new ShopQAPriorityModel { ShopNumber = shop.ShopNumber, OpenFrom = shop.QAPriorityTo });
+                            }
+                        }
+                    }
+                }
+
+                shopsQAPriorityResponseModel.Status = true;
+                shopsQAPriorityResponseModel.Message = "successfully";
+            }
+            catch (Exception e)
+            {
+                shopsQAPriorityResponseModel.Status = false;
+                shopsQAPriorityResponseModel.Message = e.Message;
+            }
+
+            return shopsQAPriorityResponseModel;
+        }
+
         public async Task<ShopsQAPriorityResponseModel> getQAPriorityForMonth(string key, DateTime from, DateTime till)
         {
             ShopsQAPriorityResponseModel shopsQAPriorityResponseModel = new ShopsQAPriorityResponseModel();
