@@ -45,7 +45,7 @@ namespace BusinessLogicLayer.Services
                 {
                     foreach (DataAccessLayer.Entities.Mobile.Stock1 stock in stocks)
                     {
-                        if (shop.Id == stock.StockId)
+                        if (shop.ShopNumber == stock.StockId)
                         {
                             if (shop.OpenFrom > DateTime.Now)
                             {
@@ -93,7 +93,7 @@ namespace BusinessLogicLayer.Services
                 {
                     foreach (DataAccessLayer.Entities.Mobile.Stock1 stock in stocks)
                     {
-                        if (shop.Id == stock.StockId)
+                        if (shop.ShopNumber == stock.StockId)
                         {
                             if (shop.OpenFrom > DateTime.Now)
                             {

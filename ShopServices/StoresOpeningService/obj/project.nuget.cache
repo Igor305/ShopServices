@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nsBiMWEq8BuTFpbLqFOiUD7acTN7k9eAmSOM0FCaVQeE3/7TA9QCCguq4/7sc1Q3ldT2nXLoZ5JLDT4ZG5EthA==",
+  "dgSpecHash": "aZlWLCRn4boxEhHQLFhYpq3NXvVaw//8VvzMP1gtC2ww9b8qiJCiBFcQHa8G+vqBgsOI0gxMPt8rnNRylG/j2w==",
   "success": true,
   "projectFilePath": "C:\\Users\\i.talavyria\\Desktop\\project\\API\\ShopServices\\ShopServices\\StoresOpeningService\\PresentationLayer.csproj",
   "expectedPackageFiles": [
@@ -111,7 +111,8 @@
     "C:\\Users\\i.talavyria\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\i.talavyria\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\i.talavyria\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\i.talavyria\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\i.talavyria\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\i.talavyria\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
   ],
   "logs": []
 }
