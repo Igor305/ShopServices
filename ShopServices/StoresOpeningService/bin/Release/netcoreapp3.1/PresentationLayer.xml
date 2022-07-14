@@ -72,6 +72,20 @@
              </remarks>
              <returns></returns>
         </member>
+        <member name="M:StoresOpeningService.Controllers.shopsInfoController.getShopsForWorkTime(System.String,System.DateTime)">
+             <summary>
+             Cписок магазинів з часом роботи
+             </summary>
+             <param name="key">Ключ</param>
+             <param name="statusId">Номер статусу</param>
+             <remarks>
+             Sample request:
+            
+                 http://shop-services.avrora.lan/api/shopsInfo/workTimes?key=exampleKey&amp;date=2020-05-05
+            
+             </remarks>
+             <returns></returns>
+        </member>
         <member name="M:StoresOpeningService.Controllers.storesOpeningController.getAllStoresOpening(System.String)">
              <summary>
              Cписок відкриттів у майбутньому

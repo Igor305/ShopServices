@@ -66,5 +66,12 @@ namespace DataAccessLayer.Repositories.EFRepositories
 
             return shops;
         }
+
+        public async Task<List<Shop>> getShopsForWorkTime()
+        {
+            List<Shop> shops = await _shopsContext.Shops.Where(x => x.StatusId == 6 || x.StatusId == 10 || x.StatusId == 14 || x.StatusId == 18 || x.StatusId == 22 || x.StatusId == 25).OrderBy(x => x.ShopNumber).ToListAsync();
+
+            return shops;
+        }
     }
 }

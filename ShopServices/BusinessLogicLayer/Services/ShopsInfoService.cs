@@ -22,13 +22,14 @@ namespace BusinessLogicLayer.Services
         private readonly IStreetsLocalizationRepository _streetsLocalizationRepository;
         private readonly IShopRegionLocalizationRepository _shopRegionLocalizationRepository;
         private readonly IEmployeesDirectoryRepository _employeesDirectoryRepository;
+        private readonly IShopWorkTimesRepository _shopWorkTimesRepository;
 
         private readonly IMapper _mapper;
         private readonly IConfiguration _configuration;
 
         public ShopsInfoService(IShopsRepository shopsRepository, IRegionsLocalizationRepository regionsLocalizationRepository, IDistrictsLocalizationRepository districtsLocalizationRepository,
                                 IShopRegionLocalizationRepository shopRegionLocalizationRepository, ICitiesLocalizationRepository citiesLocalizationRepository, IStreetsLocalizationRepository streetsLocalizationRepository,
-                                IEmployeesDirectoryRepository employeesDirectoryRepository, IMapper mapper, IConfiguration configuration)
+                                IEmployeesDirectoryRepository employeesDirectoryRepository, IShopWorkTimesRepository shopWorkTimesRepository, IMapper mapper, IConfiguration configuration)
         {
             _shopsRepository = shopsRepository;
             _regionsLocalizationRepository = regionsLocalizationRepository;
@@ -37,6 +38,7 @@ namespace BusinessLogicLayer.Services
             _streetsLocalizationRepository = streetsLocalizationRepository;
             _shopRegionLocalizationRepository = shopRegionLocalizationRepository;
             _employeesDirectoryRepository = employeesDirectoryRepository;
+            _shopWorkTimesRepository = shopWorkTimesRepository;
 
             _mapper = mapper;
             _configuration = configuration;
@@ -191,6 +193,89 @@ namespace BusinessLogicLayer.Services
 
             shopsInfoResponseModel.Status = true;
             shopsInfoResponseModel.Message = "successfully";
-        }     
+        }
+
+        public async Task<ShopWorkTimeOneDayResponseModel> getShopsForWorkTime(string key,DateTime date)
+        {
+            ShopWorkTimeOneDayResponseModel shopWorkTimeOneDayResponseModel = new ShopWorkTimeOneDayResponseModel();
+
+            if (key != _configuration["Api:Key"])
+            {
+                shopWorkTimeOneDayResponseModel.Status = false;
+                shopWorkTimeOneDayResponseModel.Message = "error key";
+                return shopWorkTimeOneDayResponseModel;
+            }
+
+            try
+            {
+                DayOfWeek dayOfWeek = date.DayOfWeek;
+
+                List<Shop> shops = await _shopsRepository.getShopsForWorkTime();
+                List<ShopModel> shopsModel = _mapper.Map<List<Shop>, List<ShopModel>> (shops);
+
+                List<ShopWorkTime> shopWorkTimes = await _shopWorkTimesRepository.getTimes();
+                List<ShopWorkTimeModel> shopWorkTimeModels = _mapper.Map<List<ShopWorkTime>, List<ShopWorkTimeModel>>(shopWorkTimes);
+
+                foreach (ShopModel shop in shopsModel)
+                {
+                    foreach (ShopWorkTimeModel shopWorkTimeModel in shopWorkTimeModels)
+                    {
+                        if (shop.ShopWorkTimeId == shopWorkTimeModel.Id)
+                        {
+                            ShopWorkTimeOneDayModel shopWorkTimeOneDayModel = new ShopWorkTimeOneDayModel();
+                            shopWorkTimeOneDayModel.ShopNumber = shop.ShopNumber;
+
+                            switch (dayOfWeek)
+                            {
+                                case DayOfWeek.Sunday:
+                                {
+                                    shopWorkTimeOneDayModel.From = shopWorkTimeModel.SundayFrom.ToLongTimeString();
+                                    shopWorkTimeOneDayModel.To = shopWorkTimeModel.SundayTo.ToLongTimeString();
+                                }break;
+                                case DayOfWeek.Monday:
+                                {
+                                    shopWorkTimeOneDayModel.From = shopWorkTimeModel.MondayFrom.ToLongTimeString();
+                                    shopWorkTimeOneDayModel.To = shopWorkTimeModel.MondayTo.ToLongTimeString();
+                                }break;
+                                case DayOfWeek.Tuesday:
+                                {
+                                    shopWorkTimeOneDayModel.From = shopWorkTimeModel.TuesdayFrom.ToLongTimeString();
+                                    shopWorkTimeOneDayModel.To = shopWorkTimeModel.TuesdayTo.ToLongTimeString();
+                                }break;
+                                case DayOfWeek.Wednesday:
+                                {
+                                    shopWorkTimeOneDayModel.From = shopWorkTimeModel.WednesdayFrom.ToLongTimeString();
+                                    shopWorkTimeOneDayModel.To = shopWorkTimeModel.WednesdayTo.ToLongTimeString();
+                                }break;
+                                case DayOfWeek.Thursday:
+                                {
+                                    shopWorkTimeOneDayModel.From = shopWorkTimeModel.ThursdayFrom.ToLongTimeString();
+                                    shopWorkTimeOneDayModel.To = shopWorkTimeModel.ThursdayTo.ToLongTimeString();
+                                }break;
+                                case DayOfWeek.Friday:
+                                {
+                                    shopWorkTimeOneDayModel.From = shopWorkTimeModel.FridayFrom.ToLongTimeString();
+                                    shopWorkTimeOneDayModel.To = shopWorkTimeModel.FridayTo.ToLongTimeString();
+                                }break;
+                                case DayOfWeek.Saturday:
+                                {
+                                    shopWorkTimeOneDayModel.From = shopWorkTimeModel.SaturdayFrom.ToLongTimeString();
+                                    shopWorkTimeOneDayModel.To = shopWorkTimeModel.SaturdayTo.ToLongTimeString();
+                                }break;
+                            }
+
+                            shopWorkTimeOneDayResponseModel.workTimes.Add(shopWorkTimeOneDayModel);
+                        }
+                    }
+                }
+                shopWorkTimeOneDayResponseModel.Status = true;
+                shopWorkTimeOneDayResponseModel.Message = "successfully";
+            }
+            catch
+            {
+
+            }
+            return shopWorkTimeOneDayResponseModel;
+        }
     }
 }

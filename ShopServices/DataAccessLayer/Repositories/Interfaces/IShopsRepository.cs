@@ -14,5 +14,6 @@ namespace DataAccessLayer.Repositories.Interfaces
         public Task<List<Shop>> getQAPriority();
         public Task<List<Shop>> getQAPriorityForMonth(DateTime from, DateTime till);
         public Task<List<Shop>> getShopsForTMS();
+        public Task<List<Shop>> getShopsForWorkTime();
     }
 }

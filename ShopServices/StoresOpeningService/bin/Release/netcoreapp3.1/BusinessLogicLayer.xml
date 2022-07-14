@@ -34,6 +34,21 @@
             Текст помилки
             </summary>
         </member>
+        <member name="P:BusinessLogicLayer.Models.Response.ShopWorkTimeOneDayResponseModel.workTimes">
+            <summary>
+            Робочі години магазинів
+            </summary>
+        </member>
+        <member name="P:BusinessLogicLayer.Models.Response.ShopWorkTimeOneDayResponseModel.Status">
+            <summary>
+            Статус
+            </summary>
+        </member>
+        <member name="P:BusinessLogicLayer.Models.Response.ShopWorkTimeOneDayResponseModel.Message">
+            <summary>
+            Текст помилки
+            </summary>
+        </member>
         <member name="T:BusinessLogicLayer.Models.ShopInfoModel">
             <summary>
             Інформація по ТТ
@@ -147,6 +162,21 @@
         <member name="P:BusinessLogicLayer.Models.ShopQAPriorityModel.OpenFrom">
             <summary>
             Дата відкриття
+            </summary>
+        </member>
+        <member name="P:BusinessLogicLayer.Models.ShopWorkTimeOneDayModel.ShopNumber">
+            <summary>
+            Номер магазину
+            </summary>
+        </member>
+        <member name="P:BusinessLogicLayer.Models.ShopWorkTimeOneDayModel.From">
+            <summary>
+            Час відкриття
+            </summary>
+        </member>
+        <member name="P:BusinessLogicLayer.Models.ShopWorkTimeOneDayModel.To">
+            <summary>
+             Час закриття
             </summary>
         </member>
     </members>

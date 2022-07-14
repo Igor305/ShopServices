@@ -1,8 +1,10 @@
-﻿using DataAccessLayer.AppContext;
+﻿using System;
+using DataAccessLayer.AppContext;
 using DataAccessLayer.Entities.Shops;
 using DataAccessLayer.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repositories.EFRepositories

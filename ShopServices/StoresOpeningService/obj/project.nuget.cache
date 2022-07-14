@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aZlWLCRn4boxEhHQLFhYpq3NXvVaw//8VvzMP1gtC2ww9b8qiJCiBFcQHa8G+vqBgsOI0gxMPt8rnNRylG/j2w==",
+  "dgSpecHash": "TW/vehc5L0+CduPVGorGatCOjPZp2CjWzj5vyo6hjQUfqNuiO0R/SDGKs4XfO89e+eBQRRRvL9D8B7O3sV2iOw==",
   "success": true,
   "projectFilePath": "C:\\Users\\i.talavyria\\Desktop\\project\\API\\ShopServices\\ShopServices\\StoresOpeningService\\PresentationLayer.csproj",
   "expectedPackageFiles": [
@@ -112,7 +112,7 @@
     "C:\\Users\\i.talavyria\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\i.talavyria\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\i.talavyria\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\i.talavyria\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
+    "C:\\Users\\i.talavyria\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.26\\microsoft.netcore.app.host.win-x64.3.1.26.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Models.Response;
+using System;
 using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.Services.Interfaces
@@ -7,5 +8,6 @@ namespace BusinessLogicLayer.Services.Interfaces
     {
         public Task<ShopsInfoResponseModel> getInfoForAllShops(string key);
         public Task<ShopsInfoResponseModel> getInfoForShopsByStatus(string key, int statusId);
+        public Task<ShopWorkTimeOneDayResponseModel> getShopsForWorkTime(string key, DateTime date);
     }
 }
