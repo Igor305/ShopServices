@@ -8,6 +8,6 @@ namespace BusinessLogicLayer.Services.Interfaces
     {
         public Task<ShopsInfoResponseModel> getInfoForAllShops(string key);
         public Task<ShopsInfoResponseModel> getInfoForShopsByStatus(string key, int statusId);
-        public Task<ShopWorkTimeOneDayResponseModel> getShopsForWorkTime(string key, DateTime date);
+        public Task<ShopWorkTimeOneDayResponseModel> getShopsForWorkTime(string key, DateTime date, int? shop);
     }
 }

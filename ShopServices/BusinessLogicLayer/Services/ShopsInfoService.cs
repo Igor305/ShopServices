@@ -195,7 +195,7 @@ namespace BusinessLogicLayer.Services
             shopsInfoResponseModel.Message = "successfully";
         }
 
-        public async Task<ShopWorkTimeOneDayResponseModel> getShopsForWorkTime(string key,DateTime date)
+        public async Task<ShopWorkTimeOneDayResponseModel> getShopsForWorkTime(string key,DateTime date, int? shopNumber)
         {
             ShopWorkTimeOneDayResponseModel shopWorkTimeOneDayResponseModel = new ShopWorkTimeOneDayResponseModel();
 
@@ -210,64 +210,39 @@ namespace BusinessLogicLayer.Services
             {
                 DayOfWeek dayOfWeek = date.DayOfWeek;
 
-                List<Shop> shops = await _shopsRepository.getShopsForWorkTime();
-                List<ShopModel> shopsModel = _mapper.Map<List<Shop>, List<ShopModel>> (shops);
-
                 List<ShopWorkTime> shopWorkTimes = await _shopWorkTimesRepository.getTimes();
                 List<ShopWorkTimeModel> shopWorkTimeModels = _mapper.Map<List<ShopWorkTime>, List<ShopWorkTimeModel>>(shopWorkTimes);
 
-                foreach (ShopModel shop in shopsModel)
+                if (shopNumber == null)
                 {
-                    foreach (ShopWorkTimeModel shopWorkTimeModel in shopWorkTimeModels)
+                    List<Shop> shops = await _shopsRepository.getShopsForWorkTime();
+                    List<ShopModel> shopsModel = _mapper.Map<List<Shop>, List<ShopModel>>(shops);
+
+                    foreach (ShopModel shopModel in shopsModel)
                     {
-                        if (shop.ShopWorkTimeId == shopWorkTimeModel.Id)
-                        {
-                            ShopWorkTimeOneDayModel shopWorkTimeOneDayModel = new ShopWorkTimeOneDayModel();
-                            shopWorkTimeOneDayModel.ShopNumber = shop.ShopNumber;
-
-                            switch (dayOfWeek)
-                            {
-                                case DayOfWeek.Sunday:
-                                {
-                                    shopWorkTimeOneDayModel.From = shopWorkTimeModel.SundayFrom.ToLongTimeString();
-                                    shopWorkTimeOneDayModel.To = shopWorkTimeModel.SundayTo.ToLongTimeString();
-                                }break;
-                                case DayOfWeek.Monday:
-                                {
-                                    shopWorkTimeOneDayModel.From = shopWorkTimeModel.MondayFrom.ToLongTimeString();
-                                    shopWorkTimeOneDayModel.To = shopWorkTimeModel.MondayTo.ToLongTimeString();
-                                }break;
-                                case DayOfWeek.Tuesday:
-                                {
-                                    shopWorkTimeOneDayModel.From = shopWorkTimeModel.TuesdayFrom.ToLongTimeString();
-                                    shopWorkTimeOneDayModel.To = shopWorkTimeModel.TuesdayTo.ToLongTimeString();
-                                }break;
-                                case DayOfWeek.Wednesday:
-                                {
-                                    shopWorkTimeOneDayModel.From = shopWorkTimeModel.WednesdayFrom.ToLongTimeString();
-                                    shopWorkTimeOneDayModel.To = shopWorkTimeModel.WednesdayTo.ToLongTimeString();
-                                }break;
-                                case DayOfWeek.Thursday:
-                                {
-                                    shopWorkTimeOneDayModel.From = shopWorkTimeModel.ThursdayFrom.ToLongTimeString();
-                                    shopWorkTimeOneDayModel.To = shopWorkTimeModel.ThursdayTo.ToLongTimeString();
-                                }break;
-                                case DayOfWeek.Friday:
-                                {
-                                    shopWorkTimeOneDayModel.From = shopWorkTimeModel.FridayFrom.ToLongTimeString();
-                                    shopWorkTimeOneDayModel.To = shopWorkTimeModel.FridayTo.ToLongTimeString();
-                                }break;
-                                case DayOfWeek.Saturday:
-                                {
-                                    shopWorkTimeOneDayModel.From = shopWorkTimeModel.SaturdayFrom.ToLongTimeString();
-                                    shopWorkTimeOneDayModel.To = shopWorkTimeModel.SaturdayTo.ToLongTimeString();
-                                }break;
-                            }
-
-                            shopWorkTimeOneDayResponseModel.workTimes.Add(shopWorkTimeOneDayModel);
-                        }
+                        getWorkTime(shopWorkTimeModels, shopModel, dayOfWeek,shopWorkTimeOneDayResponseModel);
                     }
                 }
+
+                if (shopNumber != null)
+                {
+                    Shop shop = await _shopsRepository.getShopByShopNumber(shopNumber);
+
+                    if (shop == null)
+                    {
+                        shopWorkTimeOneDayResponseModel.Status = true;
+                        shopWorkTimeOneDayResponseModel.Message = "The specified store number does not exist";
+                        return shopWorkTimeOneDayResponseModel;
+                    }
+
+                    if (shop != null)
+                    {
+                        ShopModel shopModel = _mapper.Map<Shop, ShopModel>(shop);
+                        getWorkTime(shopWorkTimeModels, shopModel, dayOfWeek, shopWorkTimeOneDayResponseModel);
+                    }
+                  
+                }
+
                 shopWorkTimeOneDayResponseModel.Status = true;
                 shopWorkTimeOneDayResponseModel.Message = "successfully";
             }
@@ -276,6 +251,66 @@ namespace BusinessLogicLayer.Services
 
             }
             return shopWorkTimeOneDayResponseModel;
+        }
+
+        private void getWorkTime(List<ShopWorkTimeModel> shopWorkTimeModels, ShopModel shopModel, DayOfWeek dayOfWeek, ShopWorkTimeOneDayResponseModel shopWorkTimeOneDayResponseModel)
+        {
+            foreach (ShopWorkTimeModel shopWorkTimeModel in shopWorkTimeModels)
+            {
+                if (shopModel.ShopWorkTimeId == shopWorkTimeModel.Id)
+                {
+                    ShopWorkTimeOneDayModel shopWorkTimeOneDayModel = new ShopWorkTimeOneDayModel();
+                    shopWorkTimeOneDayModel.ShopNumber = shopModel.ShopNumber;
+
+                    switch (dayOfWeek)
+                    {
+                        case DayOfWeek.Sunday:
+                            {
+                                shopWorkTimeOneDayModel.From = shopWorkTimeModel.SundayFrom.ToLongTimeString();
+                                shopWorkTimeOneDayModel.To = shopWorkTimeModel.SundayTo.ToLongTimeString();
+                            }
+                            break;
+                        case DayOfWeek.Monday:
+                            {
+                                shopWorkTimeOneDayModel.From = shopWorkTimeModel.MondayFrom.ToLongTimeString();
+                                shopWorkTimeOneDayModel.To = shopWorkTimeModel.MondayTo.ToLongTimeString();
+                            }
+                            break;
+                        case DayOfWeek.Tuesday:
+                            {
+                                shopWorkTimeOneDayModel.From = shopWorkTimeModel.TuesdayFrom.ToLongTimeString();
+                                shopWorkTimeOneDayModel.To = shopWorkTimeModel.TuesdayTo.ToLongTimeString();
+                            }
+                            break;
+                        case DayOfWeek.Wednesday:
+                            {
+                                shopWorkTimeOneDayModel.From = shopWorkTimeModel.WednesdayFrom.ToLongTimeString();
+                                shopWorkTimeOneDayModel.To = shopWorkTimeModel.WednesdayTo.ToLongTimeString();
+                            }
+                            break;
+                        case DayOfWeek.Thursday:
+                            {
+                                shopWorkTimeOneDayModel.From = shopWorkTimeModel.ThursdayFrom.ToLongTimeString();
+                                shopWorkTimeOneDayModel.To = shopWorkTimeModel.ThursdayTo.ToLongTimeString();
+                            }
+                            break;
+                        case DayOfWeek.Friday:
+                            {
+                                shopWorkTimeOneDayModel.From = shopWorkTimeModel.FridayFrom.ToLongTimeString();
+                                shopWorkTimeOneDayModel.To = shopWorkTimeModel.FridayTo.ToLongTimeString();
+                            }
+                            break;
+                        case DayOfWeek.Saturday:
+                            {
+                                shopWorkTimeOneDayModel.From = shopWorkTimeModel.SaturdayFrom.ToLongTimeString();
+                                shopWorkTimeOneDayModel.To = shopWorkTimeModel.SaturdayTo.ToLongTimeString();
+                            }
+                            break;
+                    }
+
+                    shopWorkTimeOneDayResponseModel.workTimes.Add(shopWorkTimeOneDayModel);
+                }
+            }
         }
     }
 }

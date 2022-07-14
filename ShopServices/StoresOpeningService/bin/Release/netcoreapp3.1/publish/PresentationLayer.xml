@@ -72,12 +72,12 @@
              </remarks>
              <returns></returns>
         </member>
-        <member name="M:StoresOpeningService.Controllers.shopsInfoController.getShopsForWorkTime(System.String,System.DateTime)">
+        <member name="M:StoresOpeningService.Controllers.shopsInfoController.getShopsForWorkTime(System.String,System.DateTime,System.Nullable{System.Int32})">
              <summary>
              Cписок магазинів з часом роботи
              </summary>
              <param name="key">Ключ</param>
-             <param name="statusId">Номер статусу</param>
+             <param name="date">Дата</param>
              <remarks>
              Sample request:
             

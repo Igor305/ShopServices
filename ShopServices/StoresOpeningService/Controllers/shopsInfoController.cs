@@ -65,7 +65,7 @@ namespace StoresOpeningService.Controllers
         /// Cписок магазинів з часом роботи
         /// </summary>
         /// <param name="key">Ключ</param>
-        /// <param name="statusId">Номер статусу</param>
+        /// <param name="date">Дата</param>
         /// <remarks>
         /// Sample request:
         ///
@@ -74,9 +74,9 @@ namespace StoresOpeningService.Controllers
         /// </remarks>
         /// <returns></returns>
         [HttpGet("workTimes")]
-        public async Task<ShopWorkTimeOneDayResponseModel> getShopsForWorkTime([FromQuery] string key, [FromQuery] DateTime date)
+        public async Task<ShopWorkTimeOneDayResponseModel> getShopsForWorkTime([FromQuery] string key, [FromQuery] DateTime date, [FromQuery] int? shopNumber)
         {
-            ShopWorkTimeOneDayResponseModel shopWorkTimeOneDayResponseModel= await _shopsInfoService.getShopsForWorkTime(key,date);
+            ShopWorkTimeOneDayResponseModel shopWorkTimeOneDayResponseModel= await _shopsInfoService.getShopsForWorkTime(key,date,shopNumber);
 
             return shopWorkTimeOneDayResponseModel;
         }
